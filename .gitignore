@@ -1,1 +1,3 @@
-*.csv 
+openeo_resultQ5.csv
+wcs_resultQ5.csv
+rasql_outputQ5.csv
