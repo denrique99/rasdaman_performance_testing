@@ -1,0 +1,31 @@
+Performance Test Results
+Date: 2024-12-13 15:51:15
+Number of Iterations: 1
+
+
+OpenEO Statistics:
+Average Time: 77.313 seconds
+Minimum Time: 77.313 seconds
+Maximum Time: 77.313 seconds
+Standard Deviation: 0.000 seconds
+
+Individual Query Times:
+Iteration 1: 77.313 seconds
+
+WCS Statistics:
+Average Time: 155.537 seconds
+Minimum Time: 155.537 seconds
+Maximum Time: 155.537 seconds
+Standard Deviation: 0.000 seconds
+
+Individual Query Times:
+Iteration 1: 155.537 seconds
+
+RasQL Statistics:
+Average Time: 54.461 seconds
+Minimum Time: 54.461 seconds
+Maximum Time: 54.461 seconds
+Standard Deviation: 0.000 seconds
+
+Individual Query Times:
+Iteration 1: 54.461 seconds
