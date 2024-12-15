@@ -1,0 +1,69 @@
+{
+  "config": {
+    "service_url": "http://localhost:8080/rasdaman/ows",
+    "tmp_directory": "/tmp/",
+    "mock": false,
+    "track_files": false,
+    "automated": true
+  },
+  "input": {
+    "coverage_id": "era5_weekly",
+    "paths": [
+      "/mnt/c/Users/dennis/Dokumente/Rasdaman/era5_week_weekly_chunks_lz4.nc"
+    ]
+  },
+  "recipe": {
+    "name": "general_coverage",
+    "options": {
+      "coverage": {
+        "crs": "OGC/0/AnsiDate@EPSG/0/4326",
+        "metadata": {
+          "type": "xml",
+          "global": {
+            "title": "ERA5 Weekly Temperature Data",
+            "source": "ERA5",
+            "institution": "ECMWF",
+            "Conventions": "CF-1.8"
+          }
+        },
+        "slicer": {
+          "type": "netcdf",
+          "pixelIsPoint": true,
+          "bands": [
+            {
+              "name": "t2m",
+              "identifier": "t2m",
+              "description": "2m Temperature",
+              "nilValue": "-9999"
+            }
+          ],
+          "axes": {
+            "ansi": {
+              "min": "${netcdf:variable:time:min}",
+              "max": "${netcdf:variable:time:max}",
+              "directPositions": "${netcdf:variable:time}",
+              "gridOrder": 0,
+              "irregular": true,
+              "type": "date"
+            },
+            "Lat": {
+              "min": "${netcdf:variable:latitude:min}",
+              "max": "${netcdf:variable:latitude:max}",
+              "gridOrder": 1,
+              "resolution": 0.25,
+              "type": "number"
+            },
+            "Long": {
+              "min": "${netcdf:variable:longitude:min}",
+              "max": "${netcdf:variable:longitude:max}",
+              "gridOrder": 2,
+              "resolution": 0.25,
+              "type": "number"
+            }
+          }
+        }
+      },
+      "tiling": "ALIGNED [0:52, 0:720, 0:1440] TILE SIZE 4000000"
+    }
+  }
+}
