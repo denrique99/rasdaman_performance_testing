@@ -11,7 +11,7 @@ def test_openeo_performance():
 
     body = {
         "title": "Q4",
-        "description": "Q4,
+        "description": "Q4",
         "process": {
             "process_graph": {
                 "load_data": {

@@ -1,31 +1,88 @@
 Performance Test Results
-Date: 2024-12-13 15:38:04
-Number of Iterations: 1
+Date: 2024-12-15 19:32:21
+Number of Iterations: 20
 
 
 OpenEO Statistics:
-Average Time: 0.439 seconds
-Minimum Time: 0.439 seconds
-Maximum Time: 0.439 seconds
-Standard Deviation: 0.000 seconds
+Average Time: 0.128 seconds
+Minimum Time: 0.077 seconds
+Maximum Time: 0.361 seconds
+Standard Deviation: 0.074 seconds
 
 Individual Query Times:
-Iteration 1: 0.439 seconds
+Iteration 1: 0.208 seconds
+Iteration 2: 0.117 seconds
+Iteration 3: 0.102 seconds
+Iteration 4: 0.089 seconds
+Iteration 5: 0.096 seconds
+Iteration 6: 0.078 seconds
+Iteration 7: 0.121 seconds
+Iteration 8: 0.121 seconds
+Iteration 9: 0.156 seconds
+Iteration 10: 0.361 seconds
+Iteration 11: 0.103 seconds
+Iteration 12: 0.093 seconds
+Iteration 13: 0.094 seconds
+Iteration 14: 0.077 seconds
+Iteration 15: 0.080 seconds
+Iteration 16: 0.298 seconds
+Iteration 17: 0.096 seconds
+Iteration 18: 0.082 seconds
+Iteration 19: 0.095 seconds
+Iteration 20: 0.088 seconds
 
 WCS Statistics:
-Average Time: 0.037 seconds
-Minimum Time: 0.037 seconds
-Maximum Time: 0.037 seconds
-Standard Deviation: 0.000 seconds
+Average Time: 0.022 seconds
+Minimum Time: 0.015 seconds
+Maximum Time: 0.035 seconds
+Standard Deviation: 0.005 seconds
 
 Individual Query Times:
-Iteration 1: 0.037 seconds
+Iteration 1: 0.022 seconds
+Iteration 2: 0.035 seconds
+Iteration 3: 0.021 seconds
+Iteration 4: 0.023 seconds
+Iteration 5: 0.023 seconds
+Iteration 6: 0.019 seconds
+Iteration 7: 0.025 seconds
+Iteration 8: 0.021 seconds
+Iteration 9: 0.025 seconds
+Iteration 10: 0.019 seconds
+Iteration 11: 0.026 seconds
+Iteration 12: 0.017 seconds
+Iteration 13: 0.019 seconds
+Iteration 14: 0.015 seconds
+Iteration 15: 0.017 seconds
+Iteration 16: 0.020 seconds
+Iteration 17: 0.023 seconds
+Iteration 18: 0.016 seconds
+Iteration 19: 0.034 seconds
+Iteration 20: 0.015 seconds
 
 RasQL Statistics:
-Average Time: 53.328 seconds
-Minimum Time: 53.328 seconds
-Maximum Time: 53.328 seconds
-Standard Deviation: 0.000 seconds
+Average Time: 7.515 seconds
+Minimum Time: 7.202 seconds
+Maximum Time: 8.604 seconds
+Standard Deviation: 0.530 seconds
 
 Individual Query Times:
-Iteration 1: 53.328 seconds
+Iteration 1: 7.461 seconds
+Iteration 2: 7.259 seconds
+Iteration 3: 7.202 seconds
+Iteration 4: 7.236 seconds
+Iteration 5: 7.252 seconds
+Iteration 6: 7.220 seconds
+Iteration 7: 8.518 seconds
+Iteration 8: 7.240 seconds
+Iteration 9: 7.230 seconds
+Iteration 10: 8.553 seconds
+Iteration 11: 7.229 seconds
+Iteration 12: 7.289 seconds
+Iteration 13: 7.258 seconds
+Iteration 14: 7.242 seconds
+Iteration 15: 7.250 seconds
+Iteration 16: 7.234 seconds
+Iteration 17: 8.604 seconds
+Iteration 18: 7.213 seconds
+Iteration 19: 7.202 seconds
+Iteration 20: 8.603 seconds

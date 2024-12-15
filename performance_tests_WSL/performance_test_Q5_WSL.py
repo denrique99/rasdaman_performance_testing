@@ -53,11 +53,11 @@ def test_openeo_performance():
     end_time = time.time()
     execution_time = end_time - start_time
 
-    output_file_openeo = "openeo_resultQ4_WSL.csv"
+    output_file_openeo = "openeo_resultQ5_WSL.csv"
     with open(output_file_openeo, 'wb') as file:
         file.write(response.content)
 
-    return execution_time, "CSV Datei wurde gespeichert als 'openeo_resultQ4_WSL.csv'"
+    return execution_time, "CSV Datei wurde gespeichert als 'openeo_resultQ5_WSL.csv'"
 
 def test_wcs_performance():
     print("Testing WCS...")
@@ -87,7 +87,7 @@ def test_wcs_performance():
     with open(output_file_wcs, 'wb') as file:
         file.write(response.content)
 
-    return execution_time, "CSV Datei wurde gespeichert als 'wcs_resultQ4_WSL.csv'"
+    return execution_time, "CSV Datei wurde gespeichert als 'wcs_resultQ5_WSL.csv'"
 
 def test_rasql_performance():
     print("Testing RasQL...")

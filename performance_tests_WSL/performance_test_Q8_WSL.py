@@ -10,8 +10,8 @@ def test_openeo_performance():
     print("\nTesting OpenEO API...")
 
     body = {
-        "title": "Q7",
-        "description": "Q7",
+        "title": "Q8",
+        "description": "Q8",
         "process": {
             "process_graph": {
                 "load_data": {
@@ -19,10 +19,10 @@ def test_openeo_performance():
                     "arguments": {
                         "id": "era5_weekly",
                         "spatial_extent": {
-                            "west": 0,
-                            "east": 100,
-                            "north": 60,
-                            "south": 30
+                            "west": '*',
+                            "east": '*',
+                            "north": '*',
+                            "south": '*'
                         },
                         "temporal_extent": [
                             "*",
@@ -53,18 +53,18 @@ def test_openeo_performance():
     end_time = time.time()
     execution_time = end_time - start_time
 
-    output_file_openeo = "openeo_resultQ7_WSL.csv"
+    output_file_openeo = "openeo_resultQ8_WSL.csv"
     with open(output_file_openeo, 'wb') as file:
         file.write(response.content)
 
-    return execution_time, "CSV Datei wurde gespeichert als 'openeo_resultQ7_WSL.csv'"
+    return execution_time, "CSV Datei wurde gespeichert als 'openeo_resultQ8_WSL.csv'"
 
 def test_wcs_performance():
     print("Testing WCS...")
 
     query = """for c in (era5_weekly) 
-    return encode(c[Lat(30:60), 
-    long(0:100), 
+    return encode(c[Lat(*:*), 
+    long(*:*), 
     ansi("*":"*")],"csv")"""
 
     params = {
@@ -83,11 +83,11 @@ def test_wcs_performance():
     end_time = time.time()
     execution_time = end_time - start_time
 
-    output_file_wcs = "wcs_resultQ4_WSL.csv"
+    output_file_wcs = "wcs_resultQ8_WSL.csv"
     with open(output_file_wcs, 'wb') as file:
         file.write(response.content)
 
-    return execution_time, "CSV Datei wurde gespeichert als 'wcs_resultQ7_WSL.csv'"
+    return execution_time, "CSV Datei wurde gespeichert als 'wcs_resultQ8_WSL.csv'"
 
 def test_rasql_performance():
     print("Testing RasQL...")
@@ -97,7 +97,7 @@ def test_rasql_performance():
         query_executor = QueryExecutor(db_connector)
         db_connector.open()
         
-        query = 'SELECT era5_weekly[*:*,481:600,1:400] FROM era5_weekly'
+        query = 'SELECT era5_weekly[*:*,*:*,*:*] FROM era5_weekly'
         
         start_time = time.time()
         result = query_executor.execute_read(query)
@@ -107,10 +107,10 @@ def test_rasql_performance():
         if result:
             data_array = result.to_array()
             reshaped_data = data_array.reshape(-1, data_array.shape[-1])
-            np.savetxt('rasql_resultQ4_WSL.csv', reshaped_data, delimiter=',', fmt='%.8f')
+            np.savetxt('rasql_resultQ8_WSL.csv', reshaped_data, delimiter=',', fmt='%.8f')
             
         db_connector.close()
-        return execution_time, "CSV Datei wurde gespeichert als 'rasql_resultQ7_WSL.csv'"
+        return execution_time, "CSV Datei wurde gespeichert als 'rasql_resultQ8_WSL.csv'"
         
     except Exception as e:
         print(f"RasQL Error: {e}")
@@ -119,7 +119,7 @@ def test_rasql_performance():
 def main():
     print("Starting Performance Tests...\n")
 
-    num_tests = 20
+    num_tests = 1
     results = []
     
     # Arrays to store times for statistical analysis
@@ -172,7 +172,7 @@ def main():
         print("-" * 50)
 
     # Calculate and save detailed statistics
-    with open('query_stats_Q7_WSL.txt', 'w') as f:
+    with open('query_stats_Q8_WSL.txt', 'w') as f:
         f.write(f"Performance Test Results\n")
         f.write(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         f.write(f"Number of Iterations: {num_tests}\n\n")
